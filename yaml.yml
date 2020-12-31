@@ -1,0 +1,39 @@
+--- 
+address: 
+  city: fremont
+  house_no: 3214
+  state: CA
+  street: "maybrid circle"
+  zipcode: 94555
+joe: 
+  age: 38
+  name: "joe jhon"
+  occupation: "devops engineer"
+  skills: 
+    - git
+    - jenkins
+    - Ansible
+kathy: 
+  age: 8
+  grade: 2nd
+  name: "kathy sundale"
+listofpeople: 
+  - sam
+  - joe
+  - ronald
+  - kathy
+ronald: 
+  age: 12
+  grade: 6th
+  name: "ronald sundale"
+sam: 
+  Skills: 
+    - .net
+    - java
+    - oracle
+    - devops
+  age: 42
+  name: "sam sundale"
+  occupation: "software developer"
+summary: "all about us"
+
