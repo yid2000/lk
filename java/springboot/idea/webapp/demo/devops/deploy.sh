@@ -1,4 +1,4 @@
-BRANCH_NAME="${GIT_BRANCH.split("/")[1]}"
-echo $BRANCH_NAME
-#mkdir -p /home/jenkins/share/$GIT_LOCAL_BRANCH/$BUILD_NUMBER
-#cp java/springboot/idea/webapp/demo/target/demo-0.0.1-SNAPSHOT.jar /home/jenkins/share/$GIT_LOCAL_BRANCH/$BUILD_NUMBER/demo.jar
+DIR_ENV=/home/jenkins/share/$DEPLOY_ENV/$BUILD_NUMBER
+echo "Deploying to $DIR_ENV.."
+mkdir -p $DIR_ENV
+cp java/springboot/idea/webapp/demo/target/demo-0.0.1-SNAPSHOT.jar $DIR_ENV/demo.jar
