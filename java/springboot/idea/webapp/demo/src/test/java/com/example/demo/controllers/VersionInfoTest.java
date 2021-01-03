@@ -8,9 +8,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 public class VersionInfoTest {
     @Test
-    public void success_when_verinfo_is_01() throws Exception {
+    public void success_when_verinfo_is_02() throws Exception {
         VersionInfo info = new VersionInfo();
         String result = info.getVersion();
-        Assertions.assertEquals("0.1", result);
+        Assertions.assertEquals("0.2", result);
     }
 }
