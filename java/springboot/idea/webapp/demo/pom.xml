@@ -32,6 +32,14 @@
     </dependencies>
 
     <build>
+        <!--
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        -->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -39,5 +47,40 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+<!--                <activatedProperties>local</activatedProperties> -->
+                <spring.profile.from.maven>local</spring.profile.from.maven>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <!--                <activatedProperties>dev</activatedProperties> -->
+                <spring.profile.from.maven>dev</spring.profile.from.maven>
+            </properties>
+        </profile>
+        <profile>
+            <id>qa</id>
+            <properties>
+                <!--                <activatedProperties>qa</activatedProperties> -->
+                <spring.profile.from.maven>qa</spring.profile.from.maven>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <!--                <activatedProperties>prod</activatedProperties> -->
+                <spring.profile.from.maven>prod</spring.profile.from.maven>
+            </properties>
+        </profile>
+    </profiles>
+
 
 </project>
