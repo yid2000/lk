@@ -1,0 +1,6 @@
+source_server_names(use ; delimiter for multiple servers),dest_server,dest_port,souce_os
+A;B;C,ng-server,80,Windows
+D;E,ng-agent-1,22,Windows
+F;G;I,ng-agent-2,80,Windows
+Z,ng-agent-2,22,Windows
+

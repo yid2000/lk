@@ -1,5 +1,0 @@
-server_names(use ; delimiter for multiple servers),ext_server,ext_port
-A;B;C,ext_1,111
-D;E,ext_2,222
-F;G;I,ext_1,123
-

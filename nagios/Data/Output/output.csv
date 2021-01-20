@@ -1,0 +1,10 @@
+source_server_name,dest_host,dest_port,result,exit_code
+A,ng-server,80,./ExternalTools/nc.exe -i 4 -w 4 -vvv ng-server 80 CONNECTION SUCCESSFUL,0
+B,ng-server,80,./ExternalTools/nc.exe -i 4 -w 4 -vvv ng-server 80 CONNECTION SUCCESSFUL,0
+C,ng-server,80,./ExternalTools/nc.exe -i 4 -w 4 -vvv ng-server 80 CONNECTION SUCCESSFUL,0
+D,ng-agent-1,22,./ExternalTools/nc.exe -i 4 -w 4 -vvv ng-agent-1 22 CONNECTION SUCCESSFUL,0
+E,ng-agent-1,22,./ExternalTools/nc.exe -i 4 -w 4 -vvv ng-agent-1 22 CONNECTION SUCCESSFUL,0
+F,ng-agent-2,80,./ExternalTools/nc.exe -i 4 -w 4 -vvv ng-agent-2 80 CONNECTION SUCCESSFUL,0
+G,ng-agent-2,80,./ExternalTools/nc.exe -i 4 -w 4 -vvv ng-agent-2 80 CONNECTION SUCCESSFUL,0
+I,ng-agent-2,80,./ExternalTools/nc.exe -i 4 -w 4 -vvv ng-agent-2 80 CONNECTION SUCCESSFUL,0
+Z,ng-agent-2,22,./ExternalTools/nc.exe -i 4 -w 4 -vvv ng-agent-2 22 CONNECTION SUCCESSFUL,0
