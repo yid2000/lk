@@ -1,0 +1,62 @@
+
+C:\Me\Tech\LK\git\lk\nagios>rem echo BEGIN running csv_port_check_nc.bat.. 
+
+C:\Me\Tech\LK\git\lk\nagios>set input_file_path="Data\Input\input.csv" 
+
+C:\Me\Tech\LK\git\lk\nagios>set output_file_path="Data\Output\output.csv" 
+
+C:\Me\Tech\LK\git\lk\nagios>echo input_file_path="Data\Input\input.csv"  output_file_path="Data\Output\output.csv" 
+input_file_path="Data\Input\input.csv"  output_file_path="Data\Output\output.csv"
+
+C:\Me\Tech\LK\git\lk\nagios>echo source_server_name,dest_host,dest_port,result,exit_code 1>"Data\Output\output.csv" 
+
+C:\Me\Tech\LK\git\lk\nagios>for /F "skip=1 usebackq tokens=1-4 delims=," %i in ("Data\Input\input.csv") do (
+CALL CustomPlugins\port_check_nc.bat %j %k %l %i  
+ echo %i,%j,%k,%l,,-1 1>>"Data\Output\output.csv" 
+) 
+
+C:\Me\Tech\LK\git\lk\nagios>(
+CALL CustomPlugins\port_check_nc.bat ng-server 80 Windows A  
+ echo A,ng-server,80,Windows,,-1 1>>"Data\Output\output.csv" 
+) 
+
+C:\Me\Tech\LK\git\lk\nagios>set server=ng-server 
+
+C:\Me\Tech\LK\git\lk\nagios>set port=80 
+
+C:\Me\Tech\LK\git\lk\nagios>set os=Windows 
+
+C:\Me\Tech\LK\git\lk\nagios>set source_server=A 
+
+C:\Me\Tech\LK\git\lk\nagios>set	nc_cmd_path= 
+
+C:\Me\Tech\LK\git\lk\nagios>if /I "Win" == "win" set nc_cmd_path=ExternalTools\nc.exe 
+
+C:\Me\Tech\LK\git\lk\nagios>if /I "Win" NEQ "win" set nc_cmd_path=nc 
+
+C:\Me\Tech\LK\git\lk\nagios>set nc_cmd=ExternalTools\nc.exe -i 4 -w 4 -vvv ng-server 80 
+
+C:\Me\Tech\LK\git\lk\nagios>set out_file_name=A_ng-server_80.txt 
+
+C:\Me\Tech\LK\git\lk\nagios>ExternalTools\nc.exe -i 4 -w 4 -vvv ng-server 80  2>&1 1>>A_ng-server_80.txt 
+Ncat: Version 5.59BETA1 ( http://nmap.org/ncat )
+NSOCK (0.5120s) TCP connection requested to 50.116.8.128:80 (IOD #1) EID 8
+NSOCK (0.5120s) Setting of SO_BROADCAST failed (IOD #1)
+NSOCK (0.5290s) Callback: CONNECT SUCCESS for EID 8 [50.116.8.128:80]
+Ncat: Connected to 50.116.8.128:80.
+NSOCK (0.5290s) Read request from IOD #1 [50.116.8.128:80] (timeout: -1ms) EID 18
+NSOCK (0.5290s) Read request for 0 bytes from IOD #2 (peer unspecified) EID 26
+NSOCK (0.5290s) Timer created - 4000ms from now.  EID 36
+NSOCK (4.5390s) Callback: TIMER SUCCESS for EID 36
+Ncat: Idle timeout expired (4000 ms).
+
+C:\Me\Tech\LK\git\lk\nagios>set var= 
+
+C:\Me\Tech\LK\git\lk\nagios>rem for /f "delims= usebackq" %i in (`ExternalTools\nc.exe -i 4 -w 4 -vvv ng-server 80>>result.txt`) do echo %i 
+
+C:\Me\Tech\LK\git\lk\nagios>echo  
+ECHO is on.
+
+C:\Me\Tech\LK\git\lk\nagios>exit /b 0 
+
+C:\Me\Tech\LK\git\lk\nagios>rem echo END running csv_port_check_nc.bat 

@@ -22,7 +22,7 @@ do
 			for source_server_name in "${array[@]}"
 				do
 					#echo "$source_server_name $dest_host $dest_port"
-					result=$(./CustomPlugins/port_check_nc.sh $dest_host $dest_port $source_os $output_file_path </dev/null)
+					result=$(./CustomPlugins/port_check_nc.sh $dest_host $dest_port $source_os </dev/null)
 					echo "$source_server_name,$dest_host,$dest_port,$result,$?" >> $output_file_path
 				done
 		fi
